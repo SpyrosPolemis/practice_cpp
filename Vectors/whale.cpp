@@ -12,4 +12,9 @@
 
 int main () {
 
+ std::string human_talk;
+ std::cout << "Enter text: ";
+ std::cin >> human_talk;
+
+
 }
