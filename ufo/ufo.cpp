@@ -14,23 +14,24 @@
 
 
 int main() {
-	// TODO: Write main
 
 	greet();
 
 	std::string codeword = "codeword";
 	std::string answer = "________";
 	int misses = 0;
-	std::vector<char> incorrect_letters;
 	bool guessed_correct_letter = false;
+	char user_guess;
 
 	while (answer != codeword && misses < 7) {
-		// TODO: Simulate turn
+		std::vector<char> incorrect_letters;
 		display_misses(misses);
-		// Display incorrect letters guessed
 		display_status(answer, incorrect_letters);
 
-		misses++;
+		std::cout << "Guess: ";
+		std::cin >> user_guess;
+
+		handle_guess(codeword, answer, misses, incorrect_letters, guessed_correct_letter, user_guess);
 	}
 
 	end_game(answer, codeword);

@@ -11,6 +11,7 @@ void greet() {
 }
 
 void display_status(std::string answer, std::vector<char> incorrect_letters) {
+	// Display incorrect letters guessed
 	for (char incorrect_letter: incorrect_letters) {
 		std::cout << incorrect_letter;
 	}
@@ -21,6 +22,27 @@ void display_status(std::string answer, std::vector<char> incorrect_letters) {
 	}
 	std::cout << "\n";
 }
+
+void handle_guess(std::string codeword, std::string answer, int &misses, std::vector<char> incorrect_letters,
+                  bool guessed_correct_letter, char user_guess) {
+	// Check to see if guess is correct and edit answer accordingly
+	for (int i = 0; i < codeword.length(); i++) {
+		if (user_guess == codeword[i]) {
+			answer[i] = user_guess;
+			guessed_correct_letter = true;
+		}
+	}
+
+	if (guessed_correct_letter) {
+		std::cout << "Correct!\n";
+	} else {
+		std::cout << "Wrong! Your friend floats a little bit higher >:(\n";
+		incorrect_letters.push_back(user_guess);
+		misses++;
+	}
+	guessed_correct_letter = false; // Reset for next turn
+}
+
 
 void end_game(std::string answer, std::string codeword) {
 	if (answer == codeword) {
