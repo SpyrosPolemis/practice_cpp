@@ -10,6 +10,18 @@ void greet() {
 	std::cout << "Instructions: save your friend from alien abduction by guessing the letters in the codeword.\n";
 }
 
+void display_status(std::string answer, std::vector<char> incorrect_letters) {
+	for (char incorrect_letter: incorrect_letters) {
+		std::cout << incorrect_letter;
+	}
+	std::cout << "\n";
+	// Display correct letters guessed
+	for (char letter: answer) {
+		std::cout << letter << " ";
+	}
+	std::cout << "\n";
+}
+
 void end_game(std::string answer, std::string codeword) {
 	if (answer == codeword) {
 		std::cout << "You win! And you saved your friend :)";
