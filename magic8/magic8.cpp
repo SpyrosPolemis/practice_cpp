@@ -25,4 +25,10 @@ int main() {
 		}
 		getline(MyFile, fortune);
 	}
+
+	MyFile.close();
+
+
+	std::cout << "MAGIC 8-BALL:\n\n";
+	std::cout << fortune << random_num;
 }
