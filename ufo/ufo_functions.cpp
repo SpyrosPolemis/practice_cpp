@@ -10,6 +10,14 @@ void greet() {
 	std::cout << "Instructions: save your friend from alien abduction by guessing the letters in the codeword.\n";
 }
 
+void end_game(std::string answer, std::string codeword) {
+	if (answer == codeword) {
+		std::cout << "You win! And you saved your friend :)";
+	} else {
+		std::cout << "You lose! And your friend was taken far far away :(";
+	}
+}
+
 
 void display_misses(int misses) {
 	if (misses == 0 || misses == 1) {
