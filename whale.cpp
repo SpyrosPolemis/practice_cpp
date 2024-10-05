@@ -4,6 +4,7 @@
  * Takes a string and translates it into its "whale talk" equivalent:
  * Only vowels, u's and e's twice as long
  *
+ * Written to practice using vectors
  */
 
 #include <iostream>
