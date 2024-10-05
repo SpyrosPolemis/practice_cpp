@@ -4,3 +4,5 @@
 void display_misses(int misses);
 
 // TODO: Declare functions
+
+void greet();

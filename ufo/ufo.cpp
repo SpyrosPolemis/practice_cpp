@@ -11,7 +11,7 @@
 #include "ufo_functions.hpp"
 
 int main() {
+	// TODO: Write main
 
-  // TODO: Write main
-
+	greet();
 }
