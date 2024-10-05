@@ -17,18 +17,23 @@ int main() {
 	std::string fortune = ""; // Create var for actual fortune
 
 	std::ifstream MyFile("magic8.txt"); //open txt file for reading as MyFile
-	if (MyFile.is_open()) { // Check file is open, why?
+	if (MyFile.is_open()) {
+		// Check file is open, why?
 		// for loop puts cursor at right place
 		for (int i = 0; i < random_num - 1; i++) {
 			getline(MyFile, bin);
 			std::cout << fortune;
 		}
 		getline(MyFile, fortune);
+	} else {
+		std::cout << "Unable to open file";
+		return 1;
 	}
 
 	MyFile.close();
 
 
 	std::cout << "MAGIC 8-BALL:\n\n";
-	std::cout << fortune << random_num;
+	std::cout << fortune;
+	// std::cout << random_num;  // Check if number matches up with line
 }
